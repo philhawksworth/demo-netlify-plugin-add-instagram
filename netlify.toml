@@ -8,12 +8,10 @@
   [plugins.inputs]
 
     # Where to put the image files
-    imageFolder = "src/_data"
+    imageFolder = "src/images/instagram"
 
     # Also stash data about the images in a json file
     dataFile = "src/_data/instagram.json"
 
     # how many seconds should we cache the instagram feed for?
     ttl = 60
-
-
