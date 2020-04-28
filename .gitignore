@@ -1,0 +1,18 @@
+# dependencies installed by npm
+/node_modules
+
+# build artefacts
+/dist
+/src/site/_includes/css
+
+# secrets and errors
+.env
+/yarn-error.log
+
+# macOS related files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,18 @@
+{
+  "name": "DemoNetlifyPluginAddInstagram",
+  "version": "0.1.0",
+  "description": "Demo Netlify Build Plugin:Add Instagram",
+  "author": "Phil Hawksworth",
+  "license": "MIT",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/philhawksworth/demo-netlify-plugin-add-instagram"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  }
+}
