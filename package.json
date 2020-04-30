@@ -13,6 +13,7 @@
     "url": "https://github.com/philhawksworth/demo-netlify-plugin-add-instagram"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0"
+    "@11ty/eleventy": "^0.10.0",
+    "dot-env": "0.0.1"
   }
 }

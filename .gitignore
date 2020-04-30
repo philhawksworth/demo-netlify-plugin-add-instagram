@@ -3,7 +3,7 @@
 
 # build artefacts
 /dist
-/src/site/_includes/css
+/src/images/instagram
 
 # secrets and errors
 .env

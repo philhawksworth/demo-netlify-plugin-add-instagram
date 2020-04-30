@@ -34,3 +34,14 @@ h2 {
 hr {
   margin: 5rem 0 3rem ;
 }
+
+.thumbnails div {
+  display: inline-block;
+  width: 20%;
+  padding: 10px;
+}
+
+.thumbnails img {
+  display:inline-block;
+  width: 100%;
+}

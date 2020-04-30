@@ -1,5 +1,5 @@
 ---
-title: "Netlify Plugin Demo: add-instagram
+title: "Netlify Plugin Demo: add-instagram"
 subtitle: Fetch and cache data from resources ready for a static site generator to use
 layout: layouts/base.njk
 ---
@@ -16,12 +16,14 @@ This site demonstrates <a href="https://github.com/philhawksworth/netlify-plugin
 
 
 <h2>Recent Instagram posts</h2>
-<ul class="listing">
+<div class="thumbnails">
 {%- for item in instagram  -%}
-  {{  item | dump }}
-  {# <li><a href="{{ item.link }}{{ site.utm }}">{{ item.title }}</a></li> #}
+  <div>
+    <img src="/images/instagram/{{ item.id }}.jpeg" alt="{{ item.caption }}" title="{{ item.caption }}" loading="lazy">
+    <a href="{{ item.instagramURL }}" title="{{ item.caption }}" target="_BLANK" rel="noopener">Original →</a>
+  </div>
 {%- endfor -%}
-</ul>
+</div>
 
 
 <hr />
