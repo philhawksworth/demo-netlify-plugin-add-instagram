@@ -4,35 +4,37 @@ subtitle: Fetch and cache data from resources ready for a static site generator 
 layout: layouts/base.njk
 ---
 
-<p>
-This site demonstrates <a href="https://github.com/philhawksworth/netlify-plugin-add-instagram">netlify-plugin-add-instagram</a>, a <a href="https://docs.netlify.com/configure-builds/build-plugins/?{{ site.utm }}">Build plugin</a> for <a href="https://netlify.com?{{ site.utm }}">Netlify</a>
-</p>
-<p>
-  Code for this demo site in available in on <a href="{{ pkg.repository.url }}">GitHub</a>.
-</p>
-<p>
-  When this example site is generated, the build plugin requests (and caches for future builds) data and nmage assets from Instagram
-</p>
+<section>
+  <p>
+  This site demonstrates <a href="https://github.com/philhawksworth/netlify-plugin-add-instagram">netlify-plugin-add-instagram</a>, a <a href="https://docs.netlify.com/configure-builds/build-plugins/?{{ site.utm }}">Build plugin</a> for <a href="https://netlify.com?{{ site.utm }}">Netlify</a>. The code for this site in available in on <a href="{{ pkg.repository.url }}">GitHub</a>.
+  </p>
+  <p>
+    When this site is builds, the build plugin requests (and caches for future builds) data and image assets from Instagram. those images can then be served as part of this site. Subsequent build get available image assets from the build cache.
+  </p>
+</section>
 
-
-<h2>Recent Instagram posts</h2>
-<div class="thumbnails">
-{%- for item in instagram  -%}
-  <div>
-    <img src="/images/instagram/{{ item.id }}.jpeg" alt="{{ item.caption }}" title="{{ item.caption }}" loading="lazy">
-    <a href="{{ item.instagramURL }}" title="{{ item.caption }}" target="_BLANK" rel="noopener">Original →</a>
+<section>
+  <h2>Recent Instagram posts</h2>
+  <p>
+    Sourced from <a href="https://instagram.com/philhawksworth" target="_BLANK" rel="noopener">Phil's Instagram</a>, but serve from the <a href="https://netlify.com/products/edge?{{ site.utm }}">Netlify CDN</a> along with this site.
+  </p>
+  <div class="thumbnails">
+  {%- for item in instagram  -%}
+    <div>
+      <a href="{{ item.instagramURL }}" title="{{ item.caption }}" target="_BLANK" rel="noopener">
+        <img src="/images/instagram/{{ item.id }}.jpeg" alt="{{ item.caption }}" title="→ {{ item.caption }}" loading="lazy">
+      </a>
+    </div>
+  {%- endfor -%}
   </div>
-{%- endfor -%}
-</div>
+</section>
 
-
-<hr />
-
-<h2>Quick try-out</h2>
-<p>
-  To quickly experiment with this plugin, you can click the button below. Clicking the button will clone <a href="{{ pkg.repository.url }}">this test site repo</a>, setup a new site <a href="https://netlify.com?{{ site.utm }}">on Netlify</a> and deploy the site complete with the plugin configured and operational.
-</p>
-<p>
-  <a href="https://app.netlify.com/start/deploy?repository={{ pkg.repository.url }}&{{ site.utm }}"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-</p>
-
+<section>
+  <h2>Quick try-out</h2>
+  <p>
+    To quickly experiment with this plugin, you can click the button below. Clicking the button will clone <a href="{{ pkg.repository.url }}">this test site repo</a>, setup a new site <a href="https://netlify.com?{{ site.utm }}">on Netlify</a> and deploy the site complete with the plugin configured and operational.
+  </p>
+  <p>
+    <a href="https://app.netlify.com/start/deploy?repository={{ pkg.repository.url }}&{{ site.utm }}"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+  </p>
+</section>

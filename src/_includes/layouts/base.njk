@@ -7,15 +7,17 @@
     <title>{{ title }}</title>
   </head>
   <body>
+    <div class="tint">
       <header>
         <h1>{{ title }}</h1>
         <p class="subtitle">{{ subtitle | safe }}</p>
       </header>
-      <main>
-      {{ content | safe }}
-      </main>
+    </div>
+    <main>
+    {{ content | safe }}
+    </main>
+    <footer>
+      Made with <img class="netliheart" title="love" src="/images/netliheart.svg" alt="love" width="1em"> by the <a href="https://netlify.com?{{site.utm}}">Netlify</a> team. Explore the code in <a href="{{ pkg.repository.url }}">GitHub</a>.
+    </footer>
   </body>
 </html>
-
-
-
