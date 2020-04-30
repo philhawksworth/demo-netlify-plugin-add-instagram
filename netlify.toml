@@ -4,7 +4,7 @@
 
 # Config for the Netlify Build Plugin: netlify-plugin-add-instagram
 [[plugins]]
-  package = "./local-netlify-plugin-add-instagram"
+  package = "netlify-plugin-add-instagram"
 
   [plugins.inputs]
 
