@@ -77,7 +77,7 @@ a:focus {
   margin-top: 0;
   font-size: 0.8rem;
 }
-.thumbnails a:hover img, {
+.thumbnails a:hover img,
 .thumbnails a:focus img {
   box-shadow:none;
 }
