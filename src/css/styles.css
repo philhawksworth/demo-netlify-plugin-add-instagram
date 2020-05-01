@@ -71,11 +71,17 @@ a:focus {
 }
 .thumbnails img {
   width: 100%;
+  box-shadow: 0 0 5px 5px var(--tint-color);
 }
 .thumbnails a {
   margin-top: 0;
   font-size: 0.8rem;
 }
+.thumbnails a:hover img, {
+.thumbnails a:focus img {
+  box-shadow:none;
+}
+
 
 .netliheart {
   margin-bottom:-0.1rem;

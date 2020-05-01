@@ -4,15 +4,7 @@
 # build artefacts
 /dist
 /src/images/instagram/*.jpeg
-
-# secrets and errors
-.env
-/yarn-error.log
-
-# macOS related files
-.DS_Store
-.AppleDouble
-.LSOverride
+/src/_data/instagram.json
 
 # Local Netlify folder
 .netlify
