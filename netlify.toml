@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "dist"
 
+[[plugins]]
+  package = "@netlify/plugin-local-install-core"
+
 # Config for the Netlify Build Plugin: netlify-plugin-add-instagram
 [[plugins]]
   package = "netlify-plugin-add-instagram"
@@ -15,10 +18,11 @@
     dataFile = "src/_data/instagram.json"
 
     # How many seconds should we cache the instagram feed for?
-    feedTTL = 30
+    feedTTL = 180
 
     # How many seconds should we cache each instagram image for?
     imageTTL = 1209600   # 2 weeks
+
 
     # Which of Instagrams image sizes should we fetch?
     # t (thumbnail)
