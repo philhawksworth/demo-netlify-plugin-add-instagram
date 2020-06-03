@@ -26,12 +26,15 @@ module.exports = {
 
 
 
-      const data = await  fetch(instagramGraphUrl, {
+      const data = await fetch(instagramGraphUrl, {
         method: 'get',
         headers: {
           'Accept': 'application/json'
         }
        }).then(res => {
+
+          console.log('headers :>> ', res.headers);
+
           console.log(instagramGraphUrl, 'returned content-type:', res.headers.get('content-type'));
 
           // ensure that we are only acting on JSON responses
