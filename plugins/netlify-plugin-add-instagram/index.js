@@ -1,5 +1,6 @@
 const fs      = require('fs');
-const fetch   = require('node-fetch');
+const got   = require('got');
+// const fetch   = require('node-fetch');
 const chalk   = require('chalk');
 
 
@@ -26,37 +27,56 @@ module.exports = {
 
 
 
-      const data = await fetch(instagramGraphUrl, {
-        method: 'get',
-        headers: {
-          'Accept': 'application/json'
-        }
-       }).then(res => {
+      // const data = await fetch(instagramGraphUrl, {
+      //   method: 'get',
+      //   headers: {
+      //     'Accept': 'application/json'
+      //   }
+      //  }).then(res => {
 
-          console.log('headers :>> ', res.headers);
+      //     console.log('headers :>> ', res.headers);
+      //     console.log(instagramGraphUrl, 'returned content-type:', res.headers.get('content-type'));
 
-          console.log(instagramGraphUrl, 'returned content-type:', res.headers.get('content-type'));
-
-          // ensure that we are only acting on JSON responses
-          if(res.headers.get('content-type').includes('application/json')){
-            return res.json();
-          } else {
-            return res.text();
-            return null;
-          }
-        });
+      //     // ensure that we are only acting on JSON responses
+      //     if(res.headers.get('content-type').includes('application/json')){
+      //       return res.json();
+      //     } else {
+      //       return res.text();
+      //       return null;
+      //     }
+      //   });
 
 
-      console.log('data :>> ', data);
+      // const {body} = await got(instagramGraphUrl, { responseType: 'json'});
+
+
+        const { body } = await got(instagramGraphUrl,  { responseType: 'json'});
+        console.log('data :>> ', body);
+
+
+
+
+
+      // } catch (error) {
+      //   // If we didn't receive JSON, fail the plugin but not the build
+      //   console.log(error.response.body);
+      //   utils.build.failPlugin(`The Instagram feed did not return JSON data.\nProceeding with the build without the data from the plugin.`);
+      //   return;
+      // }
+
+      // console.log("body:", response.body);
+
+      // console.log(body.data);
+      // console.log('data :>> ', data);
 
       // If we didn't receive JSON, fail the plugin but not the build
-      if(!data){
-        utils.build.failPlugin(`The Instagram feed did not return JSON data.\nProceeding with the build without the data from the plugin.`);
-        return;
-      }
+      // if(!data){
+      //   utils.build.failPlugin(`The Instagram feed did not return JSON data.\nProceeding with the build without the data from the plugin.`);
+      //   return;
+      // }
 
       instagramData = [];
-      for (const image of data.graphql.user.edge_owner_to_timeline_media.edges) {
+      for (const image of body.graphql.user.edge_owner_to_timeline_media.edges) {
         let localImageURL = `${inputs.imageFolder}/${image.node.shortcode}_${inputs.imageSize}.jpeg`;
         instagramData.push({
           "id": image.node.shortcode,
