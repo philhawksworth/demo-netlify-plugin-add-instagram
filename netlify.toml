@@ -12,7 +12,7 @@
 
 # Config for the Netlify Build Plugin: netlify-plugin-add-instagram
 [[plugins]]
-  package = "netlify-plugin-add-instagram"
+  package = "./plugins/netlify-plugin-add-instagram"
 
   [plugins.inputs]
 
@@ -23,10 +23,11 @@
     dataFile = "src/_data/instagram.json"
 
     # How many seconds should we cache the instagram feed for?
-    feedTTL = 180
+    feedTTL = 10
 
     # How many seconds should we cache each instagram image for?
-    imageTTL = 1209600   # 2 weeks
+    # imageTTL = 1209600   # 2 weeks
+    imageTTL = 10   # 2 weeks
 
 
     # Which of Instagrams image sizes should we fetch?
