@@ -50,11 +50,14 @@ module.exports = {
       // const {body} = await got(instagramGraphUrl, { responseType: 'json'});
 
 
-        const { body } = await got(instagramGraphUrl,  { responseType: 'json'});
-        console.log('data :>> ', body);
+        const response  = await got(instagramGraphUrl,  { responseType: 'json'});
+        const headers = response.request.options.headers;
+        const data = response.body;
+        console.log('headers :>> ',headers);
+        console.log('data :>> ',data);
 
 
-
+      return;
 
 
       // } catch (error) {
