@@ -8,7 +8,7 @@ module.exports = {
 
   async onPreBuild({ inputs, utils }) {
 
-    const instagramGraphUrl = `https://www.instagram.com/${inputs.username}/?__a=1`;
+    const instagramGraphUrl = `https://www.instagram.com/${inputs.username}/\?__a\=1`;
 
     console.log('Instagram feed url:', chalk.yellow(instagramGraphUrl));
 
