@@ -12,6 +12,18 @@ module.exports = {
 
     console.log('Instagram feed url:', chalk.yellow(instagramGraphUrl));
 
+    const response  = await got(instagramGraphUrl,  { responseType: 'json'});
+    const headers = response.request.options.headers;
+    console.log('headers :>> ',headers);
+    const data = response.body;
+    console.log('data :>> ',data);
+
+    return;
+
+
+
+
+
     // Where fetched data should reside in the build
     const dataFile = inputs.dataFile;
 
@@ -57,7 +69,7 @@ module.exports = {
         console.log('data :>> ',data);
 
 
-      return;
+
 
 
       // } catch (error) {
